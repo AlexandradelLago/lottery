@@ -1,10 +1,6 @@
-<section>
-  <p>
-    ball-selection works!
-  </p>
-  
-  <div *ngFor="let ball of balls">
-    {{ball}}
-  </div>
 
+<section id="color-ball" class="container" >
+  <figure  *ngFor="let ball of balls; let i= index" ><span [ngStyle]="setMyColor(i)" class="item"  class="ball " 
+  >{{ball}}
+  </span></figure>
 </section>
