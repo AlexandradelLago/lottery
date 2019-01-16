@@ -55,6 +55,6 @@ export class BallSelectionComponent implements OnInit {
   }
 
   removeBet(i){
-    this.ballBet.splice(i);
+    this.ballBet.splice(i,1);
   }
 }
