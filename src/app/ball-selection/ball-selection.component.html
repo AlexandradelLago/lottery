@@ -1,6 +1,19 @@
-
-<section id="color-ball" class="container" >
-  <figure  *ngFor="let ball of balls; let i= index" ><span [ngStyle]="setMyColor(i)" class="item"  class="ball " 
-  >{{ball}}
-  </span></figure>
+<section id="dashboard">
+    <section id="ballContainer"  >
+        <h1>Numbers</h1>
+        <hr>
+        <br/>
+      <div  class="container" >
+          
+          <figure class="ball" *ngFor="let item of balls; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  ><span 
+          >{{item}}
+          </span></figure>
+    
+      </div>
+    
+    
+      <button (click)="clearSelection()" class="btn-blue">Clear Selection</button>
+    </section>
+    
+    <app-bet-slip [ballBet]="ballBet" (onDelete)="removeBet($event)" ></app-bet-slip>
 </section>

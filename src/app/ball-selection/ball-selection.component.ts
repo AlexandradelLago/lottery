@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import balls from '../utils/data';
 
 @Component({
@@ -9,6 +9,7 @@ import balls from '../utils/data';
 export class BallSelectionComponent implements OnInit {
   balls = balls;
   ballsColor:Array<String> = [];
+  ballBet:Array<any>=[];
   constructor() { }
 
   ngOnInit() {
@@ -37,5 +38,23 @@ export class BallSelectionComponent implements OnInit {
       }
       return color ;
   }
+
+  clearSelection(){
+
+  }
   
+  selectNumber(event){
+    console.log(`number selected is :${event.currentTarget}`)
+    console.log(event.srcElement.textContent)
+   /* let betBall = {
+      numberBet : any =event.srcElement.textContent,
+      color=
+    }*/
+    this.ballBet.push(event.srcElement.textContent);
+  
+  }
+
+  removeBet(i){
+    this.ballBet.splice(i);
+  }
 }

@@ -2,7 +2,10 @@
 $color-red: #FF0000;
 $color-green: #00FF00;
 $color-blue: #0000FF;
-
+#dashboard{
+    display:flex;
+    flex-direction: row;
+}
 .container {
  padding: 0;
   margin: 0;
@@ -11,16 +14,12 @@ $color-blue: #0000FF;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  
+  flex-flow: row wrap;
+  align-items: center;
 
-}
-.item{
-
-   
 }
 .ball {
-    padding: 5px;
+   padding: 5px;
     color: white;
     font-weight: bold;
     font-size: 10px;
@@ -31,20 +30,18 @@ $color-blue: #0000FF;
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    text-align:center;
+    text-align:right;
   }
 
-  .stage {
-    width: 30px;
-    height: 30px;
-    -webkit-perspective: 120px;
-    -moz-perspective: 120px;
-    -ms-perspective: 120px;
-    -o-perspective: 120px;
-    perspective: 120px;
-    -webkit-perspective-origin: 50% 50%;
-    -moz-perspective-origin: 50% 50%;
-    -ms-perspective-origin: 50% 50%;
-    -o-perspective-origin: 50% 50%;
-    perspective-origin: 50% 50%;
-  }
+
+  body{
+    background-color: bisque
+}
+
+section {
+    align-content: center;
+}
+
+.btn-clear {
+    align-self: center;
+}
