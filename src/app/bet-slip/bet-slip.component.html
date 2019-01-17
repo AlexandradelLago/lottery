@@ -6,15 +6,16 @@
 
 
 <section id="bet-slip" class="container">
-{{ballBet}}
-  <figure *ngFor= 'let empty of selected; let i= index' class="ball" (click)="onNumberDelete(i)"><span>{{empty}}</span></figure>
+
+  <figure *ngFor= 'let empty of ballBet; let i= index' class="ball" (click)="onNumberDelete(i)"><span>{{empty}}</span></figure>
 
   <label for="bet">5x</label>
-  <input type="number" name="bet" [(ngModel)]="value"><button>OK</button>
+  <input type="number" name="bet" [(ngModel)]="value"><button >OK</button>
 
   <div>
       <label for="total">Total</label>
-      <p>{{5*value}}</p>
+      <p>{{total}}</p>
+      <p>Another way of total {{value*timesBet*ballBet.length}}</p>
   </div>
 
   <button class="btn-blue">Place Bet</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -7,19 +7,31 @@ import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
   styleUrls: ['./bet-slip.component.scss']
 })
 export class BetSlipComponent implements OnInit {
-selected: Array<Number> =[null,null,null,null];
-/*timesBet:Number=5;
-valueBet:Number=0;*/
-value:Number=0;
-@Input() ballBet:any;
+
+@Input() ballBet:Array<any>=[];
+
 @Output() onDelete = new EventEmitter<Number>();
+
+
+timesBet:number=5;
+valueBet:number=0;
+value:number=0;
+finalBet: any = (this.value * this.timesBet * this.ballBet.length);
+
   constructor() { }
 
   ngOnInit() {
    // this.valueBet= value*this.timesBet;
-   this.selected=this.ballBet;
+   console.log("estoy en oninit")
+
   }
  
+  get total(){
+    console.log("dentro del get")
+    return this.timesBet*this.ballBet.length*this.value;
+  }
+
+
   onNumberDelete(i){
     this.onDelete.emit(i)
   }
