@@ -1,13 +1,12 @@
-<p>
-  bet-slip works!
-</p>
+<h1>Your Bet</h1>
+<hr>
 
 <button></button>
 
 
 <section id="bet-slip" class="container">
 
-  <figure *ngFor= 'let empty of ballBet; let i= index' class="ball" (click)="onNumberDelete(i)"><span>{{empty}}</span></figure>
+  <figure *ngFor= 'let empty of ballBet; let i= index' class="ball"  (click)="onNumberDelete(i)"><span>{{empty.number}}</span></figure>
 
   <label for="bet">5x</label>
   <input type="number" name="bet" [(ngModel)]="value"><button >OK</button>
