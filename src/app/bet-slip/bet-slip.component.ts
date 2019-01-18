@@ -1,4 +1,5 @@
-import { Component, OnInit, Input,Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter, SimpleChanges, setTestabilityGetter } from '@angular/core';
+import balls from '../utils/data';
 
 
 @Component({
@@ -16,6 +17,9 @@ ballHoles:Array<any>=[];
 timesBet:number=5;
 valueBet:number=0;
 value:number=0;
+won:boolean=false;
+loser:boolean=false;
+numberSelected:number;
 
 
   constructor() { }
@@ -51,7 +55,19 @@ value:number=0;
       }  
     }
 
+play(){
+  this.numberSelected = Math.floor(Math.random()*10)+1;
+  let timesWon = this.ballBet.filter((e)=>{
+    return e.number==this.numberSelected;
+  });
+  if (timesWon.length>0){
+    this.won= true;
+  }else{
+    this.loser = true;
+  }
+  setTimeout(()=>{this.loser=false; this.won=false}, 500);
 
+}
 
 
   setMyColor(array, i){

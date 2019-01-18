@@ -17,6 +17,11 @@
       <p>Another way of total {{value*timesBet*ballBet.length}}</p>
   </div>
 
-  <button class="btn-blue">Place Bet</button>
+  <button class="btn-blue"  (click)="play()">Place Bet</button>
+
+  <div  >
+    <p *ngIf='won' >{{numberSelected}} YOU WON</p>
+    <p *ngIf='loser' >  {{numberSelected}}  YOU LOSE</p>
+  </div>
 
   </section>
