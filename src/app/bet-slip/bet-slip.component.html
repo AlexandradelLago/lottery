@@ -9,15 +9,19 @@
   <figure *ngFor= 'let empty of ballBet; let i= index' class="ball"  (click)="onNumberDelete(i)"><span>{{empty.number}}</span></figure>
 
   <label for="bet">5x</label>
-  <input type="number" name="bet" [(ngModel)]="value"><button >OK</button>
+  <input type="number" min="1" name="bet" [(ngModel)]="value"><button >OK</button>
 
   <div>
       <label for="total">Total</label>
       <p>{{total}}</p>
-      <p>Another way of total {{value*timesBet*ballBet.length}}</p>
+      <p>Another way of total {{value*timesBet}}</p>
+
+      <p>Your credit {{credit}}</p>
   </div>
 
+
   <button class="btn-blue"  (click)="play()">Place Bet</button>
+
 
   <div  >
     <p *ngIf='won' >{{numberSelected}} YOU WON</p>

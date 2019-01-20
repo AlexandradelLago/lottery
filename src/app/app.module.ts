@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BallSelectionComponent } from './ball-selection/ball-selection.component';
 import { BetSlipComponent } from './bet-slip/bet-slip.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GameServiceService } from './services/game-service.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [GameServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

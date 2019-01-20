@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 .btn-blue{
     background:blueviolet;
+    margin: 10px;
+
+}
+
+
+html, body {
+    background-color:#f0efe8;
+    height: 100%;
+    margin: 0;
+}
+
+#wrapper {
+    min-height: 100%; 
+}
+
+div{
+    align-content: center;
 }

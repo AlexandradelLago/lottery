@@ -10,10 +10,12 @@
           </span></figure>
     
       </div>
-    
+    <p>{{game.getColors()}}</p>
     
       <button (click)="clearSelection()" class="btn-blue">Clear Selection</button>
     </section>
+
+ 
     
-    <app-bet-slip [ballBet]="ballBet" [numberOfBets]="maxNumberOfBets" (onDelete)="removeBet($event)" ></app-bet-slip>
+    <app-bet-slip [ballBet]="ballBet" [numberOfBets]="maxNumberOfBets" (onDelete)="removeBet($event)" (winNumber)="winBall($event)" ></app-bet-slip>
 </section>

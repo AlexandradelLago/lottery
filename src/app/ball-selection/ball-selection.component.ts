@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import balls from '../utils/data';
+import {GameServiceService} from '../services/game-service.service';
 
 @Component({
   selector: 'app-ball-selection',
@@ -8,16 +9,18 @@ import balls from '../utils/data';
 })
 export class BallSelectionComponent implements OnInit {
   balls = balls;
-  ballsColor:Array<String> = [];
+  ballsColor:Array<string> =[];
   ballBet:Array<any>=[];
   maxNumberOfBets:number=8;
-  constructor() { }
+  constructor(private game: GameServiceService) { }
 
   ngOnInit() {
     //this.ballsColor =  this.generateRandomColor(this.ballsColor);
 
 
   }
+
+  
 
  /*  generateRandomColor(ballsColor) {
     let i=0;
@@ -38,6 +41,7 @@ export class BallSelectionComponent implements OnInit {
 
   clearSelection(){
     this.ballBet=[];
+    this.game.colors=["cambio"];
   }
   
   selectNumber(event){
@@ -45,6 +49,8 @@ export class BallSelectionComponent implements OnInit {
     if (this.ballBet.length<this.maxNumberOfBets)
     this.ballBet.push(this.balls[event.srcElement.textContent-1]);
   }
+
+   
 
   removeBet(i){
     this.ballBet.splice(i,1);
