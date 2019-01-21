@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import balls from '../utils/data';
+import {balls} from '../utils/data';
 
 @Injectable({
   providedIn: 'root'

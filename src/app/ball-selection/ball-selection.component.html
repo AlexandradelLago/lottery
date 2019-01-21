@@ -5,7 +5,7 @@
         <br/>
       <div  class="container" >
           
-          <figure class="ball" *ngFor="let item of balls; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  ><span 
+          <figure class="ball" *ngFor="let item of game.balls; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  ><span 
           >{{item.number}}
           </span></figure>
     

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,Output, EventEmitter, SimpleChanges, setTestabilityGetter } from '@angular/core';
-import balls from '../utils/data';
+import {balls,holes} from '../utils/data';
 import {GameServiceService} from '../services/game-service.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class BetSlipComponent implements OnInit {
 @Output() onDelete = new EventEmitter<Number>();
 @Output() winNumber = new EventEmitter<Number>();
 
-ballHoles:Array<any>=[];
+ballHoles:Array<any>=holes;
 timesBet:number=5;
 valueBet:number=0;
 value:number=1;
@@ -88,7 +88,7 @@ play(){
 
   setMyColor(array, i){
     let color ={
-      'background': `radial-gradient(circle at 10px 10px,${this.array[i].color}, #000)`
+      'background': `radial-gradient(circle at 10px 10px,${this.game.balls[i].color}, #000)`
      // 'background': this.ballsColor[i]
     }
     return color ;
