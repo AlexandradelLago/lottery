@@ -1,46 +1,79 @@
 const balls: Array<Object> =[{
     number:1,
-    color:'#ff73009f'
+    color: '#ff0040'
 },
 {
     number:2,
-    color:'#73ff007e'
+    color:'#57c3a6'
 },
 {
     number:3,
-    color:' #003cff2a'
+    color:' #4744e9d2'
 },{
     number:4,
-    color:'#003cff2a'
+    color:'#e7e435ec'
 },
 {
     number:5,
-    color:' #0400ff49'
+    color:' #a200ff7e'
 },
 {
     number:6,
-    color:' #0400ff49'
+    color:' #ff0040'
 },
 {
     number:7,
-    color:' #57cea6'
+    color:' #57c3a6'
 },
 {
     number:8,
-    color:' #57cea6'
+    color:' #4744e9d2'
 },
 {
     number:9,
-    color:'#ff0040'
+    color:'#e7e435ec'
 }, {
     number:10,
-    color:'#ff0040'
+    color:'#a200ff7e'
 } 
 
+];
+
+const ballsBets: Array<Object> =[{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+},{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+},
+{
+    number:null,
+    color:'#003cff2a'
+}
 ];
 
 
 
 
-export default balls;
+export {balls,ballsBets};
 

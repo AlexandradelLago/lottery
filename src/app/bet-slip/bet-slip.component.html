@@ -1,31 +1,33 @@
-
-   <h1>Your Bet</h1>
-   <hr>
+<div>
+    <h1>Your Bet</h1>
+    <hr>
+</div>
    
-
 <section id="bet-slip" class="container">
  
+      <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
 
-  <figure *ngFor= 'let empty of ballBet; let i= index' class="ball"  (click)="onNumberDelete(i)"><span>{{empty.number}}</span></figure>
+      <label for="bet">5x</label>
+      <input type="number" min="1" name="bet" [(ngModel)]="value"><button >OK</button>
 
-  <label for="bet">5x</label>
-  <input type="number" min="1" name="bet" [(ngModel)]="value"><button >OK</button>
+      <div>
+          <label for="total">Total</label>
+          <p>{{total}}</p>
+          <p>Another way of total {{value*timesBet}}</p>
 
-  <div>
-      <label for="total">Total</label>
-      <p>{{total}}</p>
-      <p>Another way of total {{value*timesBet}}</p>
+          <p>Your credit {{credit}}</p>
+      </div>
 
-      <p>Your credit {{credit}}</p>
-  </div>
+      <button class="btn-blue"  (click)="play()">Place Bet</button>
 
+      <div  >
+        <p *ngIf='won' >{{numberSelected}} YOU WON</p>
+        <p *ngIf='loser' >  {{numberSelected}}  YOU LOSE</p>
+      </div>
 
-  <button class="btn-blue"  (click)="play()">Place Bet</button>
+      <br/><b>Message Change Log</b>
+    <div *ngFor="let ball of allBallBets">
+      {{ball}}
+    </div>
 
-
-  <div  >
-    <p *ngIf='won' >{{numberSelected}} YOU WON</p>
-    <p *ngIf='loser' >  {{numberSelected}}  YOU LOSE</p>
-  </div>
-
-  </section>
+</section>

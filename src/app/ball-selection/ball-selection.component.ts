@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import balls from '../utils/data';
 import {GameServiceService} from '../services/game-service.service';
 
 @Component({
@@ -8,51 +7,48 @@ import {GameServiceService} from '../services/game-service.service';
   styleUrls: ['./ball-selection.component.scss']
 })
 export class BallSelectionComponent implements OnInit {
-  balls = balls;
+  ballsComponent;
   ballsColor:Array<string> =[];
-  ballBet:Array<any>=[];
+  betsCounter : number = 0;
+  ballBet:   number;
+  pendingBet: boolean = true;
   maxNumberOfBets:number=8;
-  constructor(private game: GameServiceService) { }
+  constructor(private game: GameServiceService) {
+    this.ballsComponent = this.game.balls;
+   }
 
   ngOnInit() {
-    //this.ballsColor =  this.generateRandomColor(this.ballsColor);
-
-
   }
 
-  
-
- /*  generateRandomColor(ballsColor) {
-    let i=0;
-    while (i<10){
-      ballsColor.push( `radial-gradient(circle at 10px 10px,#${Math.floor(Math.random()*16777215).toString(16)}, #000)`);
-      i++;
-    }
-    return ballsColor ;
-    } */
 
     setMyColor(i){
-      let color ={
-        'background': `radial-gradient(circle at 10px 10px,${this.balls[i].color}, #000)`
-       // 'background': this.ballsColor[i]
-      }
-      return color ;
-  }
+          return {'background': `radial-gradient(circle at 10px 10px,${this.game.balls[i].color}, #000)`}
+    }
+    
 
   clearSelection(){
-    this.ballBet=[];
-    this.game.colors=["cambio"];
+    // just allows to clear selection if there is a bet
+    this.toggleBet();
+    this.betsCounter--;
+    this.ballBet = null;
   }
   
   selectNumber(event){
-  // doesnt allow user to bet to more than 8 balls 
-    if (this.ballBet.length<this.maxNumberOfBets)
-    this.ballBet.push(this.balls[event.srcElement.textContent-1]);
+  // doesnt allow user to bet more once a ball is picked
+    if (this.pendingBet){
+      this.betsCounter++;
+      this.ballBet = this.game.balls[event.srcElement.textContent-1];
+      this.toggleBet();
+    }
+  
   }
 
-   
 
-  removeBet(i){
-    this.ballBet.splice(i,1);
+  removeBet(){
+    this.toggleBet();
+  }
+
+  toggleBet(){
+    this.pendingBet = !this.pendingBet;
   }
 }

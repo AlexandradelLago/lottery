@@ -3,19 +3,16 @@
         <h1>Numbers</h1>
         <hr>
         <br/>
-      <div  class="container" >
-          
-          <figure class="ball" *ngFor="let item of balls; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  ><span 
+      <div *ngIf="betsCounter<maxNumberOfBets" class="container" >
+
+          <figure class="ball" *ngFor="let item of ballsComponent; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  ><span 
           >{{item.number}}
           </span></figure>
-    
       </div>
-    <p>{{game.getColors()}}</p>
-    
-      <button (click)="clearSelection()" class="btn-blue">Clear Selection</button>
-    </section>
 
- 
+     <p>{{game.getColors()}}</p>
+      <button *ngIf="!pendingBet" (click)="clearSelection()" class="btn-blue">Clear Selection</button>
+    </section>
     
-    <app-bet-slip [ballBet]="ballBet" [numberOfBets]="maxNumberOfBets" (onDelete)="removeBet($event)" (winNumber)="winBall($event)" ></app-bet-slip>
+    <app-bet-slip [ballBetSelected]="ballBet" [numberOfBets]="betsCounter" (nextBet)="removeBet()" (winNumber)="winBall($event)" ></app-bet-slip>
 </section>

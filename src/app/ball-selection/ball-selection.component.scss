@@ -1,10 +1,12 @@
 
 $color-red:#ff0040;
 $color-green: #57cea6;
-$color-blue: #0400ff49;
-$color-red:#003cff2a;
-$color-green: #73ff007e;
-$color-blue: #ff73009f;
+$color-blue: #4744e9d2;
+$color-oragne:#e7e435ec;
+$color-green: #a200ff7e;
+$color-offWhite: #fdf5ee9f;
+$color-lightBlue: #00aeffec;
+
 #dashboard{
     display:flex;
     flex-direction: row;
@@ -38,7 +40,7 @@ $color-blue: #ff73009f;
 
 
   body{
-    background-color: bisque
+    background-color: $color-offWhite;
 }
 
 section {
@@ -50,11 +52,15 @@ section {
 }
 
 #ballContainer{
-    border: solid 2px blue;
+    border: solid 5px $color-lightBlue;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 app-bet-slip{
     float: right;
-    border: solid green 5px;
+    border: solid 5px $color-lightBlue;
+    border-radius: 15px;
     margin: 0 auto;
+    padding: 20px;
 }
