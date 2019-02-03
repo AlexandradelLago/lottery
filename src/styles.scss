@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .btn-blue{
-    background:blueviolet;
+    background:rgb(8, 141, 230);
     margin: 10px;
     width: 100px;
     height:100px;
@@ -21,6 +21,7 @@ html, body {
     min-height: 100%; 
 }
 
-div{
+div, section{
     align-content: center;
+    background: whitesmoke;
 }

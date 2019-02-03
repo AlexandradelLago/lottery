@@ -8,7 +8,7 @@ import {GameServiceService} from '../services/game-service.service';
 })
 export class BetSlipComponent implements OnChanges {
 
-@Input() ballBetSelected: Object <any> ;
+@Input() ballBetSelected: any ;
 @Input() numberOfBets:number;
 @Output() nextBet = new EventEmitter<boolean>();
 @Output() winNumber = new EventEmitter<number>();
