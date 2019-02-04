@@ -44,6 +44,10 @@ export class BallSelectionComponent implements OnInit {
   }
 
 
+  winBall(event){
+    return 5;
+  }
+
   removeBet(){
     this.toggleBet();
   }

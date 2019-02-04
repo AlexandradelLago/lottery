@@ -8,13 +8,10 @@
       <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
 
       <label for="bet">5x</label>
-      <input type="number" min="1" name="bet" [(ngModel)]="value"><button >OK</button>
+      <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  ><button >OK</button>
 
       <div>
-          <label for="total">Total</label>
-          <p>{{total}}</p>
-          <p>Another way of total {{value*timesBet}}</p>
-
+          <label for="total">Total bet = {{total}} </label>
           <p>Your credit {{credit}}</p>
       </div>
 
@@ -25,9 +22,6 @@
         <p *ngIf='loser' >  {{numberSelected}}  YOU LOSE</p>
       </div>
 
-      <br/><b>Message Change Log</b>
-    <div *ngFor="let ball of allBallBets">
-      {{ball}}
-    </div>
+  
 
 </section>

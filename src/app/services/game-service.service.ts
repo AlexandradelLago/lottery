@@ -5,14 +5,11 @@ import {balls, ballsBets} from '../utils/data';
   providedIn: 'root'
 })
 export class GameServiceService {
-colors:Array<any>=[1,2, "tico","andres","davinia"];
 balls:Array<any>=balls;
 ballsBets : Array<any> = ballsBets;
-  constructor() { }
+toBet: boolean = true;
 
-  getColors(){
-    return this.colors;
-  }
+  constructor() { }
 
   
 }
