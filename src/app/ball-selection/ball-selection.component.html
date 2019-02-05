@@ -6,7 +6,7 @@
       <div *ngIf="betsCounter<maxNumberOfBets" class="container" >
 
           <figure class="ball" *ngFor="let item of ballsComponent; let i= index" [ngStyle]="setMyColor(i)" (click)="selectNumber($event)"  >
-              {{item.number}}</figure>
+       <span> {{item.number}} </span> </figure>
       </div>
       <button *ngIf="!pendingBet" (click)="clearSelection()" class="btn-blue">Clear Selection</button>
     </section>
