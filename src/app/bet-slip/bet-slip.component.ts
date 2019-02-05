@@ -38,10 +38,7 @@ numberSelected:number;
     for (let elem in changes) {  
       let change = changes[elem];
       let curVal  = change.currentValue;
-      // let curValLOG = JSON.stringify(change.currentValue)
-      // let prevVal = JSON.stringify(change.previousValue);
-      // let changeLog = `${elem}: currentValue = ${curValLOG}, previousValue = ${prevVal}`;
-      // console.log(changeLog);
+
       if (elem === 'ballBetSelected') {
         if (curVal == null){
           // remove the current selection if we are clearing selection

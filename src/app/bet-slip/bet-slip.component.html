@@ -6,10 +6,12 @@
 <section id="bet-slip" class="container">
  
       <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
+        <div>
+            <label for="bet">5x</label>
+            <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  ><button >OK</button>
 
-      <label for="bet">5x</label>
-      <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  ><button >OK</button>
-
+        </div>
+   
       <div>
           <label for="total">Total bet = {{total}} </label>
           <p>Your credit {{credit}}</p>
