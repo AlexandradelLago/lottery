@@ -13,6 +13,7 @@ export class BallSelectionComponent implements OnInit {
   ballBet:   number;
   pendingBet: boolean = true;
   maxNumberOfBets:number=8;
+  winNumber: number = null;
   constructor(private game: GameServiceService) {
     this.ballsComponent = this.game.balls;
    }
@@ -44,8 +45,9 @@ export class BallSelectionComponent implements OnInit {
   }
 
 
-  winBall(event){
-    return 5;
+  winBall(number){
+    this.winNumber=number;
+    setTimeout(()=>this.winNumber =null, 2000 )
   }
 
   removeBet(){

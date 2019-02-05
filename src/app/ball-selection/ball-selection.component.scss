@@ -31,7 +31,7 @@ $color-lightBlue: #00aeffec;
     font-family: Verdana;
     display: flex;
     background: black;
-    margin: 0;
+    margin: 2px;
     border-radius: 50%;
     height: 30px;
     width: 30px;
@@ -45,6 +45,7 @@ $color-lightBlue: #00aeffec;
 
 section {
     align-content: center;
+    color:black;
 }
 
 .btn-clear {
@@ -63,4 +64,5 @@ app-bet-slip{
     border-radius: 15px;
     margin: 0 auto;
     padding: 20px;
+    
 }

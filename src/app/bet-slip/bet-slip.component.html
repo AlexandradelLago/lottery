@@ -1,11 +1,12 @@
-<div>
-    <h1>Your Bet</h1>
-    <hr>
-</div>
+
    
-<section id="bet-slip" class="container">
- 
-      <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
+<section id="bet-slip">
+        <div>
+                <h1>Your Bet</h1>
+                <hr>
+        </div>
+       <div  class="container">
+        <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
         <div>
             <label for="bet">5x</label>
             <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  ><button >OK</button>
@@ -17,13 +18,13 @@
           <p>Your credit {{credit}}</p>
       </div>
 
-      <button class="btn-blue"  (click)="play()">Place Bet</button>
-
       <div  >
-        <p *ngIf='won' >{{numberSelected}} YOU WON</p>
-        <p *ngIf='loser' >  {{numberSelected}}  YOU LOSE</p>
+      <button class="btn-blue"  (click)="play($event)">Place Bet</button>
       </div>
 
+
+    </div>
+ 
   
 
 </section>

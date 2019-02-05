@@ -1,5 +1,5 @@
 <section id="dashboard">
-    <section id="ballContainer"  >
+    <section *ngIf="winNumber==null" id="ballContainer"  >
         <h1>Numbers</h1>
         <hr>
         <br/>
@@ -12,5 +12,20 @@
       <button *ngIf="!pendingBet" (click)="clearSelection()" class="btn-blue">Clear Selection</button>
     </section>
     
+    <section *ngIf="winNumber!=null" id="ballContainer"  >
+            <h1>Numbers</h1>
+            <hr>
+            <br/>
+           <div class="container" >
+                <p *ngIf="winNumber==ballBet.number"> YOU WON </p>
+                <p *ngIf="winNumber!= ballBet.number"> YOU LOSE </p>
+            
+              <figure class="ball" [ngStyle]="setMyColor(winNumber-1)" ><span 
+              >{{winNumber}}
+              </span></figure>
+          </div>
+          <button *ngIf="!pendingBet" (click)="clearSelection()" class="btn-blue">Clear Selection</button>
+        </section>
+
     <app-bet-slip [ballBetSelected]="ballBet" [numberOfBets]="betsCounter" (nextBet)="removeBet()" (winNumber)="winBall($event)" ></app-bet-slip>
 </section>

@@ -18,11 +18,9 @@ allBallBets: string[] =[];
 ballsBets: Array<any>;
 timesBet: number = 5;
 valueBet: number = 0;
-value: number=1;
+value: number=10;
 credit:number= 1000;
-won:boolean=false;
-loser:boolean=false;
-numberSelected:number;
+
 
 
   constructor(private game: GameServiceService) {
@@ -55,19 +53,16 @@ numberSelected:number;
     return this.timesBet*this.value;
   }
 
-play() {
+play(event) {
 
   if (this.ballBetSelected!= null){
     let numberSelected = Math.floor(Math.random()*10)+1;
     this.winNumber.emit(numberSelected);
     if (this.ballBetSelected.number==numberSelected){
-      this.won= true;
       this.credit = this.credit + this.value * this.timesBet * 1.5;
     }else{
-      this.loser = true;
       this.credit = this.credit - this.value*this.timesBet * 1.5;
     }
-    setTimeout(()=>{this.loser=false; this.won=false}, 1000);
     this.ballBetSelected = null;
     this.nextBet.emit(true)
    
