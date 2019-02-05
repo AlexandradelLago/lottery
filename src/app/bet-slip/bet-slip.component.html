@@ -9,7 +9,7 @@
         <figure *ngFor= 'let empty of ballsBets; let i= index' class="ball"  [ngStyle]="setMyColor(i)"> <span>{{empty.number}}</span></figure>
         <div>
             <label for="bet">5x</label>
-            <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  ><button >OK</button>
+            <input  heigh="40px" type="number" min="1" name="bet" [(ngModel)]="value"  >
 
         </div>
    

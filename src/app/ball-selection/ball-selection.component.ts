@@ -47,7 +47,10 @@ export class BallSelectionComponent implements OnInit {
 
   winBall(number){
     this.winNumber=number;
-    setTimeout(()=>this.winNumber =null, 2000 )
+    setTimeout(()=>
+    {this.winNumber =null;
+      this.ballBet=null}, 2000 );
+    
   }
 
   removeBet(){
